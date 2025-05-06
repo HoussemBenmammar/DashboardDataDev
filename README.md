@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# 📊 Dashboard Collaboratif - Visualisation & Analyse de Données
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ce projet est une application web interactive permettant d'importer, visualiser, analyser et exporter des jeux de données via une interface claire et réactive.
 
-## Available Scripts
+## 🔧 Composants Frontend
 
-In the project directory, you can run:
+Tous les composants sont écrits en **React.js** avec intégration de bibliothèques open-source pour le traitement et l'affichage des données.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 🗂️ `DataImporter.jsx`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+> 📌 **Importation de fichiers CSV/XLSX** avec aperçu dynamique.
 
-### `npm test`
+- Lecture de fichiers avec `xlsx`
+- Nettoyage simple : suppression des lignes vides
+- Aperçu interactif via `react-table`
+- Envoi des données au backend via `axios`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+### 📈 `DataVisualizer.jsx`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> 📌 **Visualisation graphique des données filtrées**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Affiche des **barres**, **courbes**, **camemberts** avec `recharts`
+- Filtres temporels (`date`) et catégoriels (`type`, `groupe`, etc.)
+- Tableau interactif synchronisé avec les filtres
+- Visualisation réactive et responsive
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+### 🧠 `DataAnalysis.jsx`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+> 📌 **Analyse statistique et détection d'anomalies**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Calcul de :
+  - Moyenne
+  - Médiane
+  - Écart-type
+- Analyse de **corrélation entre variables**
+- Détection d’anomalies via `IsolationForest` (côté backend)
+- Résultats affichés sous forme lisible (JSON formatté)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 📄 `ReportExport.jsx`
 
-## Learn More
+> 📌 **Export des données et génération de rapports**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Téléchargement :
+  - Rapport PDF (`/api/report/pdf/`)
+  - Fichier CSV (`/api/export/csv/`)
+  - Fichier Excel (`/api/export/xlsx/`)
+- Génération possible via `html2canvas` (export de graphiques en PNG)
+- Communication avec l’API par `axios`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📁 Arborescence recommandée
